@@ -1,0 +1,298 @@
+---
+title: "Data Manipulation"
+date: "5/4/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+
+## Load Library
+
+```{r}
+library()
+```
+
+
+## Load Data
+
+```{r}
+library()
+
+
+```
+
+
+Note: For %>% Shortcut use: Ctrl + Shift + M (for Mac users: Cmd + Shift + M)
+
+
+## Select 
+
+- Variables: year, country, gdpPercap
+
+```{r}
+country_gdp_year <- gapminder %>%
+  select() 
+  
+```
+
+
+```{r}
+## let's see top 6 rows from the data
+
+head()
+```
+
+
+## Filter
+
+- Pick Asia from continent variable.
+
+```{r}
+gapminder_asia <- gapminder %>% 
+  filter()
+```
+
+```{r}
+## let's see top 6 rows from the data
+
+
+```
+
+
+## Your Turn - 01
+
+- Display country-wise, annual life expectancy of Europe.
+
+
+```{r}
+lifeexp_year_europe 
+  
+  
+  
+head(lifeexp_year_europe)
+```
+
+
+## Mutate
+
+- Let's calculate gdp using variable gdpPercap and pop.
+
+```{r}
+gapminder_total_gdp <- gapminder 
+```
+
+
+## Your Turn - 02
+
+- Rank all Asian countries by life expectancy in year 2007.
+
+
+```{r}
+asia_lifeExp <- gapminder
+
+
+
+
+
+
+```
+
+
+## Arrange
+
+- Let's find the population in 2007 in order.
+
+
+```{r}
+# ascending
+
+gapminder_asc <- gapminder 
+
+
+
+head(gapminder_asc)
+
+```
+
+
+```{r}
+# descending
+
+
+gapminder_desc <- gapminder 
+
+
+
+head(gapminder_desc)
+
+```
+
+## Your Turn - 03
+
+- Find countries in Asia with lowly ranked gdpPercap in 1992
+
+
+```{r}
+asia_gdpPercap_1992 <- gapminder 
+
+
+
+
+
+
+```
+
+## Group By 
+
+- Let's group variable by continent where year is 2007.
+
+
+```{r}
+gapminder_group_by <- gapminder 
+
+
+```
+
+
+## Summarize 
+
+- Summarize mean life expectancy by continent
+
+```{r}
+gapminder_sum <- gapminder_group_by 
+
+
+
+```
+
+## Your Turn - 04
+
+- Summarize mean (population and gdpPerCap) by continent in year 2007
+
+```{r}
+gapminder_pg <- gapminder_group_by 
+```
+
+
+## Rename
+
+```{r}
+country_gdp_year %>% 
+  head(4)
+
+```
+
+## if_else
+
+```{r}
+country_life_exp <- gapminder %>%
+  filter(year == 2007) %>%
+  mutate(
+    
+    
+    
+  ) %>%
+  head()
+
+
+country_life_exp
+```
+
+## case_when
+
+```{r}
+
+country_income <- gapminder %>%
+  filter(year == 2007) %>%
+  mutate(
+  
+    
+    
+  ) %>%
+  head()
+
+country_income 
+```
+
+## Bind Datasets
+
+```{r}
+one <- data.frame(num = 1:2, name = c("apple", "ball"))
+
+two <- data.frame(num = 3:4, name = c("dog", "elephant"))
+
+three <- data.frame(species = c("plant", "non-living", "animal", "animal"))
+```
+
+
+## Bind Rows - I
+
+```{r}
+four
+
+
+```
+
+
+## Bind Cols - II
+
+```{r}
+
+
+```
+
+## Bind Rows - II
+
+```{r}
+
+```
+
+
+## Binod Cols - II
+
+```{r}
+
+```
+
+## Joins
+
+
+```{r}
+# data
+
+dx <- data.frame(id = 1:2,                      
+                fruits = c("apple", "banana")
+                )
+dy <- data.frame(id = 2:3,                     
+                animals = c("cat", "dog")
+                )
+```
+
+
+
+### Inner Join
+
+```{r}
+
+```
+ 
+
+### Left Join
+
+### Right Join
+
+### Full Join
+
+
+### Semi Join
+
+### Anti Join
+
+
