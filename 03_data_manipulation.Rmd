@@ -29,7 +29,7 @@ library()
 ```
 
 
-Note: For %>% Shortcut use: Ctrl + Shift + M (for Mac users: Cmd + Shift + M)
+> Note: Use Ctrl + Shift + M to get %>% (for Mac: Cmd + Shift + M)
 
 
 ## Select 
@@ -276,13 +276,11 @@ dy <- data.frame(id = 2:3,
 ```
 
 
+> Note: Use Ctrl + Alt + I to make R chunk 
+
+
 
 ### Inner Join
-
-```{r}
-
-```
- 
 
 ### Left Join
 
