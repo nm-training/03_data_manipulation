@@ -23,7 +23,7 @@ library()
 ## Load Data
 
 ```{r}
-library()
+gapminder <- 
 
 
 ```
