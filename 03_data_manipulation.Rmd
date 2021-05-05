@@ -1,6 +1,6 @@
 ---
 title: "Data Manipulation"
-date: "5/4/2021"
+date: "`r Sys.Date()`"
 output: html_document
 ---
 
