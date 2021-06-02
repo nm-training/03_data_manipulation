@@ -13,19 +13,15 @@ knitr::opts_chunk$set(
 ```
 
 
-## Load Library
+## Load library and data
 
 ```{r}
-library()
-```
+library(readr)
+library(dplyr)
 
+gapminder <- read_csv("./data/gapminder.csv")
 
-## Load Data
-
-```{r}
-gapminder <- 
-
-
+head(gapminder, 4)
 ```
 
 
@@ -37,32 +33,33 @@ gapminder <-
 - Variables: year, country, gdpPercap
 
 ```{r}
-country_gdp_year <- gapminder %>%
-  select() 
-  
+country_gdp <- gapminder %>% 
+  select( ) 
+
+
+head(country_gdp)
 ```
-
-
-```{r}
-## let's see top 6 rows from the data
-
-head()
-```
-
 
 ## Filter
 
 - Pick Asia from continent variable.
 
 ```{r}
-gapminder_asia <- gapminder %>% 
-  filter()
+asia <- gapminder %>% 
+  filter(continent == "")
+
+
+asia
 ```
 
+## Chaining Functions
+
+- Yearly GDP per Capita of Nepal
+
 ```{r}
-## let's see top 6 rows from the data
-
-
+gapminder %>% 
+  filter(country == "Nepal") %>% 
+  select(year, country, gdpPercap)
 ```
 
 
@@ -70,13 +67,13 @@ gapminder_asia <- gapminder %>%
 
 - Display country-wise, annual life expectancy of Europe.
 
+> Use Ctrl+Shift+m to get pipe %>% 
 
 ```{r}
-lifeexp_year_europe 
+gapminder %>% 
   
-  
-  
-head(lifeexp_year_europe)
+
+
 ```
 
 
@@ -85,14 +82,13 @@ head(lifeexp_year_europe)
 - Let's calculate gdp using variable gdpPercap and pop.
 
 ```{r}
-gapminder_total_gdp <- gapminder 
+gapminder 
 ```
 
 
 ## Your Turn - 02
 
 - Rank all Asian countries by life expectancy in year 2007.
-
 
 ```{r}
 asia_lifeExp <- gapminder
@@ -117,8 +113,6 @@ gapminder_asc <- gapminder
 
 
 
-head(gapminder_asc)
-
 ```
 
 
@@ -129,8 +123,6 @@ head(gapminder_asc)
 gapminder_desc <- gapminder 
 
 
-
-head(gapminder_desc)
 
 ```
 
@@ -184,8 +176,8 @@ gapminder_pg <- gapminder_group_by
 ## Rename
 
 ```{r}
-country_gdp_year %>% 
-  head(4)
+country_gdp %>% 
+  
 
 ```
 
@@ -195,9 +187,8 @@ country_gdp_year %>%
 country_life_exp <- gapminder %>%
   filter(year == 2007) %>%
   mutate(
-    
-    
-    
+     life_exp_status =
+       if_else(lifeExp > 60, "", "") #<<
   ) %>%
   head()
 
@@ -212,9 +203,11 @@ country_life_exp
 country_income <- gapminder %>%
   filter(year == 2007) %>%
   mutate(
-  
-    
-    
+  gdpPercap < 1000 ~ "Low Income",                          #<<
+  between(gdpPercap, 1000, ) ~ "Lower-Middle Income",   #<<
+  between(gdpPercap, 5000, 20000) ~ "Upper-Middle Income",  #<<
+  # gdpPercap > 500 & gdpPercap < 2000 ~ "Upper-Middle Income",
+  gdpPercap > 20000 ~ " "           
   ) %>%
   head()
 
